@@ -131,8 +131,15 @@
 		B6C261D11687EA040075253E /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = B6C261D01687EA040075253E /* vec4.c */; };
 		B6C261D61687EA040075253E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261D51687EA040075253E /* main.m */; };
 		B6C261D91687EA040075253E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261D81687EA040075253E /* AppDelegate.m */; };
-		B6C261DC1687EA040075253E /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261DB1687EA040075253E /* HelloWorldLayer.m */; };
 		B6C261DF1687EA040075253E /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261DE1687EA040075253E /* IntroLayer.m */; };
+		B6C261E71687EB6B0075253E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261E61687EB6B0075253E /* GameScene.m */; };
+		B6C261E91687F36A0075253E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C261E81687F36A0075253E /* Default-568h@2x.png */; };
+		B6C261EC1687F4290075253E /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261EB1687F4290075253E /* BackgroundLayer.m */; };
+		B6C261EE1687FB190075253E /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C261ED1687FB190075253E /* fire.png */; };
+		B6C261F01687FE430075253E /* land.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C261EF1687FE430075253E /* land.png */; };
+		B6C261F2168801980075253E /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C261F1168801980075253E /* cannon.png */; };
+		B6C261F5168801D60075253E /* Cannon.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261F4168801D60075253E /* Cannon.m */; };
+		B6C261F816880A780075253E /* InterfaceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261F716880A780075253E /* InterfaceLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -394,10 +401,20 @@
 		B6C261D51687EA040075253E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6C261D71687EA040075253E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6C261D81687EA040075253E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B6C261DA1687EA040075253E /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		B6C261DB1687EA040075253E /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		B6C261DD1687EA040075253E /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		B6C261DE1687EA040075253E /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		B6C261E51687EB6B0075253E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		B6C261E61687EB6B0075253E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		B6C261E81687F36A0075253E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B6C261EA1687F4290075253E /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		B6C261EB1687F4290075253E /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
+		B6C261ED1687FB190075253E /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Enemies/fire.png"; sourceTree = "<group>"; };
+		B6C261EF1687FE430075253E /* land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = land.png; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Background/land.png"; sourceTree = "<group>"; };
+		B6C261F1168801980075253E /* cannon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cannon.png; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Player/cannon.png"; sourceTree = "<group>"; };
+		B6C261F3168801D60075253E /* Cannon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cannon.h; sourceTree = "<group>"; };
+		B6C261F4168801D60075253E /* Cannon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cannon.m; sourceTree = "<group>"; };
+		B6C261F616880A780075253E /* InterfaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceLayer.h; sourceTree = "<group>"; };
+		B6C261F716880A780075253E /* InterfaceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +440,7 @@
 		B6C2603E1687EA010075253E = {
 			isa = PBXGroup;
 			children = (
+				B6C261E81687F36A0075253E /* Default-568h@2x.png */,
 				B6C2605F1687EA010075253E /* Asteroids */,
 				B6C2604C1687EA010075253E /* Frameworks */,
 				B6C2604A1687EA010075253E /* Products */,
@@ -458,13 +476,19 @@
 			children = (
 				B6C261D71687EA040075253E /* AppDelegate.h */,
 				B6C261D81687EA040075253E /* AppDelegate.m */,
-				B6C261DA1687EA040075253E /* HelloWorldLayer.h */,
-				B6C261DB1687EA040075253E /* HelloWorldLayer.m */,
 				B6C261DD1687EA040075253E /* IntroLayer.h */,
 				B6C261DE1687EA040075253E /* IntroLayer.m */,
+				B6C261EA1687F4290075253E /* BackgroundLayer.h */,
+				B6C261EB1687F4290075253E /* BackgroundLayer.m */,
 				B6C260601687EA010075253E /* Resources */,
 				B6C2607A1687EA010075253E /* libs */,
 				B6C261D31687EA040075253E /* Supporting Files */,
+				B6C261E51687EB6B0075253E /* GameScene.h */,
+				B6C261E61687EB6B0075253E /* GameScene.m */,
+				B6C261F3168801D60075253E /* Cannon.h */,
+				B6C261F4168801D60075253E /* Cannon.m */,
+				B6C261F616880A780075253E /* InterfaceLayer.h */,
+				B6C261F716880A780075253E /* InterfaceLayer.m */,
 			);
 			path = Asteroids;
 			sourceTree = "<group>";
@@ -472,6 +496,9 @@
 		B6C260601687EA010075253E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6C261F1168801980075253E /* cannon.png */,
+				B6C261EF1687FE430075253E /* land.png */,
+				B6C261ED1687FB190075253E /* fire.png */,
 				B6C260611687EA010075253E /* Default.png */,
 				B6C260631687EA010075253E /* Default-Landscape~ipad.png */,
 				B6C260651687EA010075253E /* fps_images.png */,
@@ -895,6 +922,10 @@
 				B6C260761687EA010075253E /* Icon@2x.png in Resources */,
 				B6C260791687EA010075253E /* iTunesArtwork in Resources */,
 				B6C261B71687EA040075253E /* ChangeLog in Resources */,
+				B6C261E91687F36A0075253E /* Default-568h@2x.png in Resources */,
+				B6C261EE1687FB190075253E /* fire.png in Resources */,
+				B6C261F01687FE430075253E /* land.png in Resources */,
+				B6C261F2168801980075253E /* cannon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1007,8 +1038,11 @@
 				B6C261D11687EA040075253E /* vec4.c in Sources */,
 				B6C261D61687EA040075253E /* main.m in Sources */,
 				B6C261D91687EA040075253E /* AppDelegate.m in Sources */,
-				B6C261DC1687EA040075253E /* HelloWorldLayer.m in Sources */,
 				B6C261DF1687EA040075253E /* IntroLayer.m in Sources */,
+				B6C261E71687EB6B0075253E /* GameScene.m in Sources */,
+				B6C261EC1687F4290075253E /* BackgroundLayer.m in Sources */,
+				B6C261F5168801D60075253E /* Cannon.m in Sources */,
+				B6C261F816880A780075253E /* InterfaceLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
