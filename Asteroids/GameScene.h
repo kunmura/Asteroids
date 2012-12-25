@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "Cannon.h"
 #import "InterfaceLayer.h"
+#import "EnemyController.h"
 
 #define LAND_HEIGHT 22          // 地面の高さとして記述
 
@@ -19,12 +20,14 @@
     CCLayer *enemyLayer;        // 敵キャラクター配置用レイヤー
     CCLayer *beamLayer;         // 弾を配置するレイヤー
     
-    InterfaceLayer *interfaceLayer;    // 入力を受け付けるレイヤー
+    EnemyController *enemyController;   // 敵の管理クラス
+    InterfaceLayer *interfaceLayer;     // 入力を受け付けるレイヤー
 }
 @property (nonatomic, retain)CCLayer *baseLayer;
 @property (nonatomic, retain)Cannon *player;
 @property (nonatomic, retain)CCLayer *enemyLayer;
 @property (nonatomic, retain)CCLayer *beamLayer;
+@property (nonatomic, retain)EnemyController *enemyController;
 @property (nonatomic, retain)InterfaceLayer *interfaceLayer;
 
 // シングルトンオブジェクトを返すメソッド

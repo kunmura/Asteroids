@@ -140,6 +140,11 @@
 		B6C261F2168801980075253E /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C261F1168801980075253E /* cannon.png */; };
 		B6C261F5168801D60075253E /* Cannon.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261F4168801D60075253E /* Cannon.m */; };
 		B6C261F816880A780075253E /* InterfaceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261F716880A780075253E /* InterfaceLayer.m */; };
+		B6C261FB16887EE40075253E /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261FA16887EE30075253E /* Enemy.m */; };
+		B6C261FD168880E40075253E /* asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C261FC168880E40075253E /* asteroid.png */; };
+		B6C26200168884580075253E /* EnemyController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261FF168884580075253E /* EnemyController.m */; };
+		B6C2620316888D980075253E /* Beam.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C2620216888D980075253E /* Beam.m */; };
+		B6C2620516888F360075253E /* beam.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C2620416888F360075253E /* beam.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -415,6 +420,16 @@
 		B6C261F4168801D60075253E /* Cannon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cannon.m; sourceTree = "<group>"; };
 		B6C261F616880A780075253E /* InterfaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceLayer.h; sourceTree = "<group>"; };
 		B6C261F716880A780075253E /* InterfaceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceLayer.m; sourceTree = "<group>"; };
+		B6C261F916887EE30075253E /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		B6C261FA16887EE30075253E /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		B6C261FC168880E40075253E /* asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = asteroid.png; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Enemies/asteroid.png"; sourceTree = "<group>"; };
+		B6C261FE168884570075253E /* EnemyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyController.h; sourceTree = "<group>"; };
+		B6C261FF168884580075253E /* EnemyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyController.m; sourceTree = "<group>"; };
+		B6C2620116888D970075253E /* Beam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beam.h; sourceTree = "<group>"; };
+		B6C2620216888D980075253E /* Beam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beam.m; sourceTree = "<group>"; };
+		B6C2620416888F360075253E /* beam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beam.png; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Player/beam.png"; sourceTree = "<group>"; };
+		B6C262061688987D0075253E /* blast.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = blast.caf; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Enemies/blast.caf"; sourceTree = "<group>"; };
+		B6C2620716889A870075253E /* crash.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = crash.caf; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Enemies/crash.caf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +504,12 @@
 				B6C261F4168801D60075253E /* Cannon.m */,
 				B6C261F616880A780075253E /* InterfaceLayer.h */,
 				B6C261F716880A780075253E /* InterfaceLayer.m */,
+				B6C261F916887EE30075253E /* Enemy.h */,
+				B6C261FA16887EE30075253E /* Enemy.m */,
+				B6C261FE168884570075253E /* EnemyController.h */,
+				B6C261FF168884580075253E /* EnemyController.m */,
+				B6C2620116888D970075253E /* Beam.h */,
+				B6C2620216888D980075253E /* Beam.m */,
 			);
 			path = Asteroids;
 			sourceTree = "<group>";
@@ -496,6 +517,10 @@
 		B6C260601687EA010075253E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6C2620716889A870075253E /* crash.caf */,
+				B6C262061688987D0075253E /* blast.caf */,
+				B6C2620416888F360075253E /* beam.png */,
+				B6C261FC168880E40075253E /* asteroid.png */,
 				B6C261F1168801980075253E /* cannon.png */,
 				B6C261EF1687FE430075253E /* land.png */,
 				B6C261ED1687FB190075253E /* fire.png */,
@@ -926,6 +951,8 @@
 				B6C261EE1687FB190075253E /* fire.png in Resources */,
 				B6C261F01687FE430075253E /* land.png in Resources */,
 				B6C261F2168801980075253E /* cannon.png in Resources */,
+				B6C261FD168880E40075253E /* asteroid.png in Resources */,
+				B6C2620516888F360075253E /* beam.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1043,6 +1070,9 @@
 				B6C261EC1687F4290075253E /* BackgroundLayer.m in Sources */,
 				B6C261F5168801D60075253E /* Cannon.m in Sources */,
 				B6C261F816880A780075253E /* InterfaceLayer.m in Sources */,
+				B6C261FB16887EE40075253E /* Enemy.m in Sources */,
+				B6C26200168884580075253E /* EnemyController.m in Sources */,
+				B6C2620316888D980075253E /* Beam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

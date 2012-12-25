@@ -66,12 +66,12 @@
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {              // タッチが終了したとき
     // 移動停止の指示を出す
     GameScene *scene = [GameScene sharedInstance];
-    [scene.player stopMooving];
+    [scene.player stopMoving];
 }
 - (void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {        // タッチが電話などでキャンセルされたとき
     // 移動停止の指示を出す
     GameScene *scene = [GameScene sharedInstance];
-    [scene.player stopMooving];
+    [scene.player stopMoving];
 }
 
 @end

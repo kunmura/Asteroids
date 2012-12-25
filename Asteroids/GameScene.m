@@ -19,6 +19,10 @@
 @implementation GameScene
 @synthesize baseLayer;
 @synthesize player;
+@synthesize enemyController;
+@synthesize interfaceLayer;
+@synthesize enemyLayer;
+@synthesize beamLayer;
 
 static GameScene *scene_ = nil;
 
@@ -52,10 +56,18 @@ static GameScene *scene_ = nil;
         self.player = [Cannon node];
         self.player.position = ccp(240,0);
         [self.baseLayer addChild:player z:10];
+        // 自機の移動開始
+        self.player.start;
         
         // ユーザーインタフェースを担当するクラスを起動・baseLayer上に配置
         self.interfaceLayer = [InterfaceLayer node];
         [self.baseLayer addChild:self.interfaceLayer z:100];
+        
+        // 敵キャラクターを配置する管理クラスを起動
+        self.enemyController = [EnemyController node];
+        [self.baseLayer addChild:self.enemyController z:-1];
+        // 敵キャラクターの出現
+        [self.enemyController startController];
         
         // 敵を表示するレイヤーをbaseLayer上に配置
         self.enemyLayer = [CCLayer node];
@@ -72,6 +84,8 @@ static GameScene *scene_ = nil;
 - (void)dealloc{
     // 保持していたメンバー変数を解放
     self.baseLayer = nil;
+    self.interfaceLayer = nil;
+    self.enemyController = nil;
     self.enemyLayer = nil;
     self.beamLayer = nil;
     

@@ -9,8 +9,16 @@
 #import "Cannon.h"
 #import "GameScene.h"
 
+// プライベートメソッドを、クラスエクステンションによって
+// 外部に見えないよう宣言します。
+@interface Cannon ()
+// 弾を発射するメソッド
+- (void)fire;
+@end
+
 @implementation Cannon
 @synthesize sprite;
+@synthesize cartridge;
 
 - (id)init{
     self = [super init];
@@ -23,30 +31,56 @@
         [self addChild:sprite];
         
         state = kCannonIsStopped;
+        
+        // 弾を先に作成しておき、配列(弾倉)に保存しておきます。
+        // 発射する際には、この配列内の弾を使います。
+        self.cartridge = [NSMutableArray arrayWithCapacity:30];
+        for (int i=0; i<30; i++) {
+            Beam *beam = [Beam node];
+            [self.cartridge addObject:beam];
+        }
+        cartridgePos = 0;
     }
     return self;
+}
+
+- (void)dealloc {
+    self.sprite = nil;
+    self.cartridge = nil;
+    // スケジューリングしてたイベントを全て停止してから終了
+    [self unscheduleAllSelectors];
+    [self unscheduleUpdate];
+    
+    [super dealloc];
 }
 
 - (void)start {
     // 移動するためのイベントを動かし始める
     life = 5;
     [self scheduleUpdate];
+    [self schedule:@selector(fire) interval:0.25f];
     started = YES;
 }
 
 - (void)stop {
     started = NO;
     // startとは逆にイベントをスケジューラから解除
+    [self unschedule:@selector(fire)];
     [self unscheduleUpdate];
 }
 
-- (void)dealloc {
-    self.sprite = nil;
-    // スケジューリングしてたイベントを全て停止してから終了
-    [self unscheduleAllSelectors];
-    [self unscheduleUpdate];
-    
-    [super dealloc];
+- (void)fire{
+    // 停止しているときだけ弾が発射されるように
+    if(state==kCannonIsStopped){
+        Beam *b = [self.cartridge objectAtIndex:cartridgePos];
+        // 砲台の先端から弾が発射される様に、初期位置を調整したうえで発射
+        CGPoint position = ccp(self.position.x,
+                               self.position.y
+                               + self.sprite.contentSize.height
+                               + LAND_HEIGHT);
+        [b goFrom:position layer:[GameScene sharedInstance].beamLayer];
+        cartridgePos = (cartridgePos +1)%30;
+    }
 }
 
 #pragma mark 移動イベント
@@ -77,9 +111,9 @@
             break;
     }
     float newX = self.position.x + dx;
-    if (newX<0.0f){
+    if (newX < 0.0f){
         newX = 0;
-    }else if(newX>480.0f){
+    }else if(newX > 480.0f){
         newX = 480;
     }
     self.position = ccp(newX, 0);
