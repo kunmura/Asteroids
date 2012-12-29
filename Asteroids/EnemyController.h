@@ -23,4 +23,6 @@
 // 動作を停止。画面上に表示してる敵キャラを削除
 - (void)stopController;
 
+// 管理している敵キャラに当たり判定を実施
+- (BOOL)checkCollision:(CGPoint)position;
 @end

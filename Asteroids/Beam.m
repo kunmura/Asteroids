@@ -45,10 +45,10 @@
         return;
     }
 
-    // あたり判定のチェック
+    // 当たり判定のチェック
     BOOL isHit = [[GameScene sharedInstance].enemyController checkCollision:self.position];
-    if(isHit) {
-        [self removeFromParentAndCleanup:YES];
+    if (isHit) {
+        [self removeFromParentAndCleanup:YES]; // イベントも同時に停止
         isStaged = NO;
         return;
     }

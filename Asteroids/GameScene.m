@@ -56,8 +56,6 @@ static GameScene *scene_ = nil;
         self.player = [Cannon node];
         self.player.position = ccp(240,0);
         [self.baseLayer addChild:player z:10];
-        // 自機の移動開始
-        self.player.start;
         
         // ユーザーインタフェースを担当するクラスを起動・baseLayer上に配置
         self.interfaceLayer = [InterfaceLayer node];
@@ -66,8 +64,6 @@ static GameScene *scene_ = nil;
         // 敵キャラクターを配置する管理クラスを起動
         self.enemyController = [EnemyController node];
         [self.baseLayer addChild:self.enemyController z:-1];
-        // 敵キャラクターの出現
-        [self.enemyController startController];
         
         // 敵を表示するレイヤーをbaseLayer上に配置
         self.enemyLayer = [CCLayer node];
@@ -77,6 +73,8 @@ static GameScene *scene_ = nil;
         self.beamLayer = [CCLayer node];
         [self.baseLayer addChild:self.beamLayer z:30];
         
+        // ゲームを開始
+        [self startGame];
     }
     return self;
 }
@@ -100,5 +98,15 @@ static GameScene *scene_ = nil;
     i = t.tv_sec;
     i += t.tv_usec;
     srandom(i);
+}
+
+#pragma mark -
+- (void)startGame {
+    // 敵キャラクターの出現
+    [self.enemyController startController];
+    
+    // 自機の位置をリセットして動作開始
+    self.player.position = ccp(240,0);
+    [self.player start];
 }
 @end

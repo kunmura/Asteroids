@@ -39,4 +39,6 @@ typedef enum{
 - (void)moveRight;
 - (void)stopMoving;
 
+// 指定した座標に対して衝突しているか判定
+- (BOOL)hitIfCollided:(CGPoint)position;
 @end

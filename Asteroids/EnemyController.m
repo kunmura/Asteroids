@@ -75,7 +75,7 @@
         enemyPos = (enemyPos +1)%20;
     }
     
-    //次ぎの出現タイミングを再スケジュール
+    //次の出現タイミングを再スケジュール
     ccTime nextTime = 1;
     [self unschedule:@selector(stageEnemy)];
     [self schedule:@selector(stageEnemy) interval:nextTime];

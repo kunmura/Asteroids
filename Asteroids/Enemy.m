@@ -60,8 +60,24 @@
     [self runAction:rotateForever];
     [self runAction:moveDown];
     
+    // スケジュールのアップデートを有効に
+    [self scheduleUpdate];
+    
     [layer addChild:self];
     isStaged = YES;
+}
+
+- (void)update:(ccTime)dt {
+    NSLog(@"チェック enemy");
+    // 地面に激突したかどうかを自機クラスに判定してもらう
+    // self.positionだと隕石の中心になるため、半径を引いて下幅で判定
+    CGPoint position = ccp(self.position.x, self.position.y-radius);
+    BOOL isHit = [[GameScene sharedInstance].player hitIfCollided:position];
+
+    if(isHit){
+        NSLog(@"削除");
+        [self removeFromParentAndCleanup:YES];
+    }
 }
 
 - (void)romoveFromParentAndCleanup:(BOOL)cleanup {

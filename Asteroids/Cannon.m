@@ -14,6 +14,8 @@
 @interface Cannon ()
 // 弾を発射するメソッド
 - (void)fire;
+// 敵が地面に激突したイベントを扱うメソッド
+- (BOOL)hitIfCollided:(CGPoint)position;
 @end
 
 @implementation Cannon
@@ -69,20 +71,6 @@
     [self unscheduleUpdate];
 }
 
-- (void)fire{
-    // 停止しているときだけ弾が発射されるように
-    if(state==kCannonIsStopped){
-        Beam *b = [self.cartridge objectAtIndex:cartridgePos];
-        // 砲台の先端から弾が発射される様に、初期位置を調整したうえで発射
-        CGPoint position = ccp(self.position.x,
-                               self.position.y
-                               + self.sprite.contentSize.height
-                               + LAND_HEIGHT);
-        [b goFrom:position layer:[GameScene sharedInstance].beamLayer];
-        cartridgePos = (cartridgePos +1)%30;
-    }
-}
-
 #pragma mark 移動イベント
 // 移動の指示を他のクラスから受け取る。
 // 指示が有ったらすぐ動くのではなく、状態だけを変更しておき、
@@ -117,5 +105,42 @@
         newX = 480;
     }
     self.position = ccp(newX, 0);
+}
+
+- (void)fire{
+    // 停止しているときだけ弾が発射されるように
+    if(state==kCannonIsStopped){
+        Beam *b = [self.cartridge objectAtIndex:cartridgePos];
+        // 砲台の先端から弾が発射される様に、初期位置を調整したうえで発射
+        CGPoint position = ccp(self.position.x,
+                               self.position.y
+                               + self.sprite.contentSize.height
+                               + LAND_HEIGHT);
+        [b goFrom:position layer:[GameScene sharedInstance].beamLayer];
+        cartridgePos = (cartridgePos +1)%30;
+    }
+}
+
+- (BOOL)hitIfCollided:(CGPoint)position{
+    // 地面の高さに到達している場合は衝突したとみなす
+    BOOL isHit = position.y < LAND_HEIGHT;
+    NSLog(@"チェック %i",isHit);
+    if(isHit){
+        NSLog(@"衝突");
+        [self gotHit:position];
+    }
+    return isHit;
+}
+
+- (void)gotHit:(CGPoint)position{
+    life--;
+    
+    // 画面を揺らしてダメージを受けたことを表示
+    id action = [CCShaky3D actionWithRange:5 shakeZ:YES grid:ccg(10,15) duration:0.5];
+    id reset = [CCCallBlock actionWithBlock:^{
+        // CCShaky3Dの動作が終了したときに、画面の揺れを元に戻す
+        [GameScene sharedInstance].baseLayer.grid = nil;
+    }];
+    [[GameScene sharedInstance].baseLayer runAction:[CCSequence actions:action, reset, nil]];
 }
 @end
