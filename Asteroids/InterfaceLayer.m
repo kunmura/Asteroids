@@ -39,9 +39,14 @@
         GameScene *scene = [GameScene sharedInstance];
         [scene.player moveLeft];
     }else{
-        // 右への移動指示を出す
-        GameScene *scene = [GameScene sharedInstance];
-        [scene.player moveRight];
+        if(location.y > 280){
+            // ポーズ用
+            [[GameScene sharedInstance]pause];
+        }else{
+            // 右への移動指示を出す
+            GameScene *scene = [GameScene sharedInstance];
+            [scene.player moveRight];
+        }
     }
     // タッチイベントをこのメソッドで終える
     // （他のレイヤーのデリゲートメソッドを呼ばない）

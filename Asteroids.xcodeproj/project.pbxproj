@@ -145,6 +145,8 @@
 		B6C26200168884580075253E /* EnemyController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C261FF168884580075253E /* EnemyController.m */; };
 		B6C2620316888D980075253E /* Beam.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C2620216888D980075253E /* Beam.m */; };
 		B6C2620516888F360075253E /* beam.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C2620416888F360075253E /* beam.png */; };
+		B6E689AE168FAEBA00136AA7 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E689AD168FAEBA00136AA7 /* PauseLayer.m */; };
+		B6E689B4168FD8D700136AA7 /* GameoverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E689B3168FD8D700136AA7 /* GameoverLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -430,6 +432,10 @@
 		B6C2620416888F360075253E /* beam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beam.png; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Player/beam.png"; sourceTree = "<group>"; };
 		B6C262061688987D0075253E /* blast.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = blast.caf; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Enemies/blast.caf"; sourceTree = "<group>"; };
 		B6C2620716889A870075253E /* crash.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = crash.caf; path = "../../../../Downloads/cocos2d-LessonBook-samplecode/chapter4/Asteroids-chapter4/Asteroids/Characters/Enemies/crash.caf"; sourceTree = "<group>"; };
+		B6E689AC168FAEBA00136AA7 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
+		B6E689AD168FAEBA00136AA7 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseLayer.m; sourceTree = "<group>"; };
+		B6E689B2168FD8D700136AA7 /* GameoverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameoverLayer.h; sourceTree = "<group>"; };
+		B6E689B3168FD8D700136AA7 /* GameoverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameoverLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,6 +516,10 @@
 				B6C261FF168884580075253E /* EnemyController.m */,
 				B6C2620116888D970075253E /* Beam.h */,
 				B6C2620216888D980075253E /* Beam.m */,
+				B6E689AC168FAEBA00136AA7 /* PauseLayer.h */,
+				B6E689AD168FAEBA00136AA7 /* PauseLayer.m */,
+				B6E689B2168FD8D700136AA7 /* GameoverLayer.h */,
+				B6E689B3168FD8D700136AA7 /* GameoverLayer.m */,
 			);
 			path = Asteroids;
 			sourceTree = "<group>";
@@ -1073,6 +1083,8 @@
 				B6C261FB16887EE40075253E /* Enemy.m in Sources */,
 				B6C26200168884580075253E /* EnemyController.m in Sources */,
 				B6C2620316888D980075253E /* Beam.m in Sources */,
+				B6E689AE168FAEBA00136AA7 /* PauseLayer.m in Sources */,
+				B6E689B4168FD8D700136AA7 /* GameoverLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1176,6 +1188,7 @@
 				B6C261E41687EA040075253E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

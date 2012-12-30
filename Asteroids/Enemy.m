@@ -68,24 +68,24 @@
 }
 
 - (void)update:(ccTime)dt {
-    NSLog(@"チェック enemy");
     // 地面に激突したかどうかを自機クラスに判定してもらう
     // self.positionだと隕石の中心になるため、半径を引いて下幅で判定
     CGPoint position = ccp(self.position.x, self.position.y-radius);
     BOOL isHit = [[GameScene sharedInstance].player hitIfCollided:position];
 
     if(isHit){
-        NSLog(@"削除");
         [self removeFromParentAndCleanup:YES];
     }
 }
 
-- (void)romoveFromParentAndCleanup:(BOOL)cleanup {
+- (void)removeFromParentAndCleanup:(BOOL)cleanup {
     // 画面から除外するときに、プロパティもリセット
     self.position = CGPointZero;
     self.scale = 1.0f;
     radius = ENEMY_DEFAULT_RADIUS;
     isStaged = NO;
+    
+    NSLog(@"cleanup");
     
     // リセット後、オーバーライドした元の処理を呼び出す
     [super removeFromParentAndCleanup:cleanup];
@@ -115,6 +115,12 @@
         bomb.position = self.position;
         bomb.autoRemoveOnFinish = YES;
         [[GameScene sharedInstance].baseLayer addChild:bomb z:100];
+        
+        // 大きさに応じたスコアを計算し、加算
+        NSInteger score = 100 * self.scale;
+        [[GameScene sharedInstance]addScore:score];
+        
+        // オブジェクトの削除
         [self removeFromParentAndCleanup:YES];
     }
 }
